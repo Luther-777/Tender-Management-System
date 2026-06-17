@@ -1,0 +1,66 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"> 
+
+<h:head> 
+<title>View All Tenders</title>
+<link rel="stylesheet" type="text/css" href="resources/styles.css" />
+</h:head> 
+<body bgcolor="lightgrey">
+
+	<h3 align="center"><u>View All Tenders</u></h3>
+
+<center>
+	<h:dataTable border="1" cellpadding="4" value="#{companybean.tenderlist}" var="tnd">
+	
+	<h:column>
+		<f:facet name="header">ID</f:facet>
+		#{tnd.tid}
+	</h:column>
+	
+	<h:column>
+		<f:facet name="header">Name</f:facet>
+		#{tnd.name}
+	</h:column>
+	
+	<h:column>
+		<f:facet name="header">DepartmentId</f:facet>
+		#{tnd.departmentid}
+	</h:column>
+	
+	<h:column>
+		<f:facet name="header">opendate</f:facet>
+		#{tnd.opendate}
+	</h:column>
+	
+	<h:column>
+		<f:facet name="header">Deadline</f:facet>
+		#{tnd.deadline}
+	</h:column>
+	
+	<h:column>
+		<f:facet name="header">Budget</f:facet>
+		#{tnd.budget}
+	</h:column>
+	
+	<h:column>
+		<f:facet name="header">Contact</f:facet>
+		#{tnd.contact}
+	</h:column>
+	
+	<h:column>
+		<f:facet name="header">Action</f:facet>
+		
+		<h:form>
+			<h:commandLink  action="#{adminbean.delete(tnd.tid)}" value="Delete" />
+		</h:form>
+	</h:column>
+	
+	
+		
+	</h:dataTable>
+</center>
+</body> 
+</html>

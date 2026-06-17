@@ -1,0 +1,61 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html">
+
+<h:head>
+    <title>Add Company</title>
+</h:head>
+<body>
+<!--  <h:outputStylesheet library="css" name="creg.css"/> -->
+<h3 align="center"><u>Add Company</u></h3>
+
+<center>
+    <div class="form-card">
+        <h:form enctype="multipart/form-data">
+            <h:panelGrid columns="3" cellpadding="5">
+                <h:outputLabel for="cid" value="Company ID:" />
+                <h:inputText id="cid" value="#{companybean.cid}" required="true" />
+                <h:message for="cid" style="color:red"/>
+
+                <h:outputLabel for="username" value="Company UserName:" />
+                <h:inputText id="username" value="#{companybean.cname}" required="true" maxlength="50" />
+                <h:message for="username"/>
+
+                <h:outputLabel for="email" value="Company Email:" />
+                <h:inputText id="email" value="#{companybean.email}" required="true" maxlength="50" />
+                <h:message for="email"/>
+
+                <h:outputLabel for="department" value="Select Department"/>
+                <h:selectOneMenu id="department" required="true" requiredMessage="Select Department" value="#{empbean.department}">
+                    <f:selectItem itemLabel="--Select--" itemValue=""/>
+                    <f:selectItem itemLabel="Technical" itemValue="TECHNICAL"/>
+                    <f:selectItem itemLabel="Marketing" itemValue="MARKETING"/>
+                </h:selectOneMenu>
+                <h:message for="department" style="color:red"/>
+
+                <h:outputLabel for="cdof" value="Company DOF:" />
+                <h:inputText id="cdof" value="#{companybean.dof}" required="true" />
+                <h:message for="cdof"/>
+
+                <h:outputLabel for="ccontact" value="Contact:" />
+                <h:inputText id="ccontact" value="#{companybean.ccontact}" required="true" maxlength="20" />
+                <h:message for="ccontact"/>
+
+                <h:outputLabel for="password" value="Password:" />
+                <h:inputSecret id="password" value="#{companybean.cpassword}" required="true" />
+                <h:message for="password"/>
+
+                <h:outputLabel for="image" value="Upload Profile Image:" />
+                <h:inputFile id="image" value="#{companybean.uploadedImage}" required="true" />
+
+                <h:outputLabel for="add-button" value="" />
+                <h:commandButton id="add-button" value="Add" action="#{companybean.addcompany()}" />
+                <h:message for="add-button"/>
+            </h:panelGrid>
+        </h:form>
+    </div>
+</center>
+</body>
+</html>

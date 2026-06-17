@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+     
+<h:head>
+    <title>Add Tender</title>
+    <style>
+        body {
+            background-image: url('resources/backgroundhome.jpg');
+            background-size: cover;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        h3 {
+            text-align: center;
+            color: #333;
+        }
+        .form-card {
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            width: 400px;
+            margin-top: 100px; /* Adjusted for navbar height */
+        }
+        .form-card h3 {
+            margin-top: 0;
+        }
+        h:form {
+            display: flex;
+            justify-content: center;
+        }
+        h:panelGrid {
+            width: 100%;
+        }
+        h:inputText, h:commandButton {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        h:commandButton {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        h:commandButton:hover {
+            background-color: #45a049;
+        }
+        h:outputLabel {
+            margin-top: 10px;
+        }
+        .navbar {
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 10px 0;
+            text-align: center;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            display: compact;
+            justify-content: space-around;
+            align-items: center;
+        }
+        .navbar h1 {
+            margin: 0;
+            font-size: 24px;
+            color: white;
+        }
+        .navbar a {
+            margin: 0 10px;
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            text-decoration: none;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .navbar a:hover {
+            background-color: #45a049;
+        }
+    </style>
+</h:head>
+<h:body>
+    <div class="navbar">
+        <a href="adminhome.jsp">Home</a>
+        <a href="addtender.jsf">Add Tenders</a>
+        <a href="viewalltenders.jsf">View All Tenders</a>
+        <a href="updatetender.jsf">Update Tender</a>
+        <a href="alogout.jsp">Logout</a>
+    </div>
+
+    <div class="form-card">
+        <h3>Add Tender</h3>
+        <h:form>
+            <h:panelGrid columns="2" cellpadding="5">
+
+                <h:outputLabel for="tid" value="Tender ID:" />
+                <h:inputText id="tid" value="#{adminbean.tid}" required="true" />
+
+                <h:outputLabel for="name" value="Tender Name:" />
+                <h:inputText id="name" value="#{adminbean.name}" required="true" maxlength="50" />
+
+                <h:outputLabel for="departmentid" value="Department ID:" />
+                <h:inputText id="departmentid" value="#{adminbean.departmentid}" />
+
+                <h:outputLabel for="opendate" value="Open Date:" />
+                <h:inputText id="opendate" value="#{adminbean.opendate}" required="true">
+                    <f:convertDateTime pattern="yyyy-MM-dd" />
+                </h:inputText>
+
+                <h:outputLabel for="deadline" value="Deadline:" />
+                <h:inputText id="deadline" value="#{adminbean.deadline}" required="true">
+                    <f:convertDateTime pattern="yyyy-MM-dd" />
+                </h:inputText>
+
+                <h:outputLabel for="timeline" value="Timeline (years):" />
+                <h:inputText id="timeline" value="#{adminbean.timeline}" />
+
+                <h:outputLabel for="contact" value="Contact:" />
+                <h:inputText id="contact" value="#{adminbean.contact}" required="true" maxlength="20" />
+
+                <h:outputLabel for="budget" value="Budget:" />
+                <h:inputText id="budget" value="#{adminbean.budget}" required="true" />
+
+                <h:outputLabel for="add-button"/>
+                <h:commandButton id="add-button" value="Add" action="#{adminbean.add()}" />
+
+            </h:panelGrid>
+        </h:form>
+    </div>
+</h:body>
+</html>

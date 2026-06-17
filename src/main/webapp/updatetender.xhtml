@@ -1,0 +1,46 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"> 
+
+<h:head>
+<title>Update Tender</title>
+<link rel="stylesheet" type="text/css" href="resources/styles.css" />
+</h:head> 
+<body> 
+<!--<ui:include src="/index.xhtml" />-->
+<h3 align="center"><u>Update Tender</u></h3>
+
+<center>
+<h:form>
+<h:panelGrid columns="3" cellpadding="5">
+
+<h:outputLabel for="name" value="Enter Name" />
+<h:inputText id="name" required="true" requiredMessage="Enter Name" value="#{adminbean.name}" />
+<h:message for="name" style="color:red"/>
+
+
+<h:outputLabel for="budget" value="Enter Budget" />
+<h:inputText id="budget" required="true" requiredMessage="Enter Salary" value="#{adminbean.budget}" >
+<f:validateDoubleRange minimum="10000.0"/>
+</h:inputText>
+<h:message for="salary" style="color:red"/>
+
+<h:outputLabel  for="timeline" value="Enter Timeline" />
+<h:inputText id="timeline" required="true" requiredMessage="Enter Timeline" value="#{adminbean.timeline}" />
+<h:message for="timeline" style="color:red"/>
+
+<h:outputLabel for="contact" value="Enter contact" />
+<h:inputSecret id="contact" required="true" requiredMessage="Enter Password" value="#{adminbean.contact}"/>
+<h:message for="contact" style="color:red"/>
+
+<h:outputLabel for="update"/>
+<h:commandButton styleClass="button" value="Update" action="#{adminbean.update()}"/>
+<h:message for="update"/>
+
+</h:panelGrid>
+</h:form>
+</center>
+</body> 
+</html>

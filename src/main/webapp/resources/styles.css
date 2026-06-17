@@ -1,0 +1,113 @@
+/* General styling for the body */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: url('backgroundhome.jpg') no-repeat center center fixed;
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+    color: black;
+}
+
+/* Navigation bar styling */
+nav {
+    background-color: #4CAF50;
+    overflow: hidden;
+    text-align: center;
+}
+
+nav a {
+    display: inline-block;
+    color: white;
+    text-align: center;
+    padding: 14px 20px;
+    text-decoration: none;
+}
+
+nav a:hover {
+    background-color: #45a049;
+}
+
+/* Center alignment for headings */
+h1, h3 {
+    text-align: center;
+    color: #333;
+    background-color: #45a049;
+}
+
+/* Styling for tables */
+table {
+    border-collapse: collapse;
+    width: 80%;
+    margin: 20px auto;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+table, th, td {
+    border: 1px solid #ddd;
+}
+
+th, td {
+    padding: 12px;
+    text-align: left;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+/* Styling for form elements */
+form {
+    max-width: 400px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    text-align: center;
+}
+
+input[type="text"], input[type="password"], input[type="submit"], button {
+    width: calc(100% - 24px);
+    padding: 10px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+/* Button styling */
+button, input[type="submit"], a.button {
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 8px 0;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    text-decoration: none;
+    text-align: center;
+    cursor: pointer;
+}
+
+button:hover, input[type="submit"]:hover, a.button:hover {
+    background-color: #45a049;
+}
+
+/* Styling for messages */
+h3[style], h4[style] {
+    text-align: center;
+}
+
+h3[style="color:red"], h4[style="color:red"] {
+    color: #d9534f;
+}
+
+h3[style="color:green"], h4[style="color:green"] {
+    color: #5cb85c;
+}
+
+/* Center alignment for forms */
+form {
+    text-align: center;
+}

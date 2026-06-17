@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+<h:head>
+    <title>Company Login</title>
+    <style>
+        body {
+            background-image: url('resources/backgroundhome.jpg'); /* Replace with your background image path */
+            background-size: cover;
+            background-position: center;
+            font-family: Arial, sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            color: black;
+        }
+        .card {
+            background-color: lightgreen; /* Increase opacity for better visibility */
+            padding: 40px; /* Increase padding */
+            border-radius: 10px; /* Increase border-radius */
+            box-shadow: threedshadow; /* Increase shadow for better depth */
+            width: 350px; /* Increase width */
+            text-align: center;
+        }
+        h1 {
+            color: #333;
+            text-align: center;
+            margin-bottom: 15px;
+        }
+        h:commandButton {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            text-decoration: none;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        h:commandButton:hover {
+            background-color: #45a049;
+        }
+        h:outputLabel {
+            display: block;
+            width: 100%;
+            margin-bottom: 10px;
+            text-align: left;
+            color:black; /* Ensure labels are visible */
+        }
+        h:inputText, h:inputSecret {
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            width: calc(100% - 20px); /* Adjust input field width to fit inside padding */
+            margin-bottom: 15px;
+            box-sizing: border-box;
+            color: black; /* Set input text color to black */
+        }
+    </style>
+</h:head>
+<h:body>
+
+<ui:include src="/index.xhtml" />
+
+    <div class="card">
+        <h1>Company Login</h1>
+        <h:form>
+            <h:panelGrid columns="3" padding="5">
+                <h:outputLabel for="username" value="Enter Username"/>
+				<h:inputText id="username" validatorMessage="Username length must be in between 3 and 30" value="#{companybean.cname}">
+				<f:validateLength minimum="3" maximum="30"/>
+				</h:inputText>
+				<h:message for="username" style="color:red"/>								
+				<h:outputLabel for="password" value="Enter Password"/>
+				<h:inputSecret id="password" validatorMessage="Password length must be in between 3 and 30" value="#{companybean.cpassword}">
+				<f:validateLength minimum="3" maximum="30"/>
+				</h:inputSecret>
+				<h:message for="password" style="color:red"/>
+				
+				<h:outputLabel for="login"/>
+				<h:commandButton id="login" class="button" value="Login"  action="#{companybean.validateCompanyLogin()}"/>
+				<h:message for="login"/>
+            </h:panelGrid>
+        </h:form>
+        <h:messages globalOnly="true" />
+    </div>
+
+</h:body>
+</html>

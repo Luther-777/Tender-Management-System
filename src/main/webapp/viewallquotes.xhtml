@@ -1,0 +1,46 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"> 
+
+<h:head> 
+<title>View All Quotes</title>
+<link rel="stylesheet" type="text/css" href="resources/styles.css" />
+</h:head> 
+<body bgcolor="lightgrey">
+
+	<h3 align="center"><u>View All Quotes</u></h3>
+
+<center>
+	<h:dataTable border="1" cellpadding="4" value="#{companybean.quotelist}" var="qut">
+	
+	<h:column>
+		<f:facet name="header">ID</f:facet>
+		#{qut.qid}
+	</h:column>
+	
+	<h:column>
+		<f:facet name="header">Name</f:facet>
+		#{qut.qname}
+	</h:column>
+	
+	<h:column>
+		<f:facet name="header">DepartmentId</f:facet>
+		#{qut.qdepartmentid}
+	</h:column>
+	
+	<h:column>
+		<f:facet name="header">Budget</f:facet>
+		#{qut.qbudget}
+	</h:column>
+	
+	<h:column>
+		<f:facet name="header">Contact</f:facet>
+		#{qut.qcontact}
+	</h:column>
+			
+	</h:dataTable>
+</center>
+</body> 
+</html>

@@ -1,0 +1,88 @@
+body {
+    background-color: lightgrey;
+    background: url('backgroundhome.jpg') no-repeat center center fixed;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+h3 {
+    text-align: center;
+    color: #333;
+}
+
+.form-card {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 500px;
+    margin-top: 20px; /* Adjust as needed */
+}
+
+h:form {
+    display: flex;
+    justify-content: center;
+}
+
+h:panelGrid {
+    width: 100%;
+}
+
+h:inputText, h:inputSecret, h:inputFile, h:selectOneMenu, h:commandButton {
+    width: calc(100% - 24px);
+    padding: 10px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+h:commandButton {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+h:commandButton:hover {
+    background-color: #45a049;
+}
+
+h:message {
+    color: red;
+}
+
+.navbar {
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 10px 0;
+    text-align: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.navbar a {
+    margin: 0 10px;
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    text-decoration: none;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.navbar a:hover {
+    background-color: #45a049;
+}
